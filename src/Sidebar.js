@@ -75,8 +75,7 @@ function Sidebar() {
             <SidebarOption Icon={DuoIcon} title="Vedio Confrencing" />
             <hr/>
             <SidebarOption Icon={AddIcon} title="Add channel" />
-            
-
+            <hr/>
             {/* {Connect all the channel to the database} */}
             {/* {SidebarOption} */}
             {channels.map(channel=>(
