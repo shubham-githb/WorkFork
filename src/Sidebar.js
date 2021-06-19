@@ -50,11 +50,11 @@ function Sidebar() {
             <SidebarOption Icon={InsertCommentIcon} title="Threads" />
             <SidebarOption title = "Discussion Forum"/>
             <SidebarOption Icon={InboxIcon} title="Mentions & reactions" />
-			<SidebarOption Icon={DraftsIcon} title="Saved items" />
-			<SidebarOption Icon={BookmarkBorderIcon} title="Channel browser" />
+			{/* <SidebarOption Icon={DraftsIcon} title="Saved items" />
+			<SidebarOption Icon={BookmarkBorderIcon} title="Channel browser" /> */}
 			<SidebarOption Icon={FileCopyIcon} title="File browser" />
-			<SidebarOption Icon={PeopleAltIcon} title="People & user groups" />
-			<SidebarOption Icon={AppsIcon} title="Apps" />
+			{/* <SidebarOption Icon={PeopleAltIcon} title="People & user groups" />
+			<SidebarOption Icon={AppsIcon} title="Apps" /> */}
             
             {/* <SidebarOption title = "Module-1"/>
             <SidebarOption title = "Module-2"/>
@@ -68,21 +68,24 @@ function Sidebar() {
             {/* <SidebarOption Icon={ExpandLessIcon} title="Show more" /> */}
             <SidebarOption Icon={ExpandLessIcon} title="Show less" />
             <hr/>
-            <SidebarOption Icon={ExpandMoreIcon} title="Channels" />
+            {/* <SidebarOption Icon={ExpandMoreIcon} title="Channels" />
             <hr/>
-            
+             */}
             <SidebarOption Icon={VoiceChatIcon} title="VoiceChat" />
             <SidebarOption Icon={DuoIcon} title="Vedio Confrencing" />
             <hr/>
-            <SidebarOption Icon={AddIcon} title="Add channel" />
+            <SidebarOption Icon={AddIcon} addChannelOption title="Add channel" />
             <hr/>
             {/* {Connect all the channel to the database} */}
             {/* {SidebarOption} */}
-            {channels.map(channel=>(
-                <SidebarOption
-                title = {channel.name}
-                id={channel.id}
-            />
+            {
+                channels.map((channel) => (
+					<SidebarOption
+						key={channel.id}
+						title={channel.name}
+						id={channel.id}
+					/>
+
             ))}
            
             
