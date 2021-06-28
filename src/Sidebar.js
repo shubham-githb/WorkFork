@@ -18,10 +18,12 @@ import MeetingRoomIcon from '@material-ui/icons/MeetingRoom';
 import VoiceChatIcon from '@material-ui/icons/VoiceChat';
 import DuoIcon from '@material-ui/icons/Duo';
 import db from "./firebase";
+import { useStateValue } from "./StateProvider"
 
 function Sidebar() {
 
     const [channels,setChannels] = useState([]);
+    const [{user}] = useStateValue();
 
     useEffect(()=>{
         db.collection('rooms').onSnapshot(snapshot=>(
@@ -42,7 +44,7 @@ function Sidebar() {
                     <h2>Channels</h2>
                     <h3>
                         <FiberManualRecordIcon />
-                        Guest User
+                        {user.displayName}
                     </h3>
                 </div>
                 <CreateIcon/>
